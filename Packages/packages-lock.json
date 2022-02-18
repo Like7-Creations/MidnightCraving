@@ -1,18 +1,10 @@
 {
   "dependencies": {
     "com.unity.collab-proxy": {
-<<<<<<< Updated upstream
-      "version": "1.15.7",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.nuget.newtonsoft-json": "2.0.0",
-=======
       "version": "1.15.12",
       "depth": 0,
       "source": "registry",
       "dependencies": {
->>>>>>> Stashed changes
         "com.unity.services.core": "1.0.1"
       },
       "url": "https://packages.unity.com"
@@ -25,28 +17,16 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-<<<<<<< Updated upstream
-      "version": "3.0.9",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ext.nunit": "1.0.6"
-=======
       "version": "2.0.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.1"
->>>>>>> Stashed changes
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-<<<<<<< Updated upstream
-      "version": "2.0.12",
-=======
       "version": "2.0.14",
->>>>>>> Stashed changes
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -61,16 +41,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-<<<<<<< Updated upstream
-    "com.unity.nuget.newtonsoft-json": {
-      "version": "2.0.0",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-=======
->>>>>>> Stashed changes
     "com.unity.services.core": {
       "version": "1.0.1",
       "depth": 1,
@@ -101,11 +71,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-<<<<<<< Updated upstream
-      "version": "1.6.3",
-=======
       "version": "1.4.8",
->>>>>>> Stashed changes
       "depth": 0,
       "source": "registry",
       "dependencies": {
