@@ -15,13 +15,13 @@ public class DoorController : MonoBehaviour
     {
         if (doorOpen)
         {
-            anim.Play("DoorClose");
+            anim.Play("doorclose");
             doorOpen = false;
             Debug.Log("Door close animation");
         }
         else if (!doorOpen)
         {
-            anim.Play("DoorOpen");
+            anim.Play("dooropen");
             doorOpen = true;
             Debug.Log("Door open animation");
 

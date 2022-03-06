@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
     bool canJump;
+    [HideInInspector] public bool hiding = false;
 
     private void Update()
     {
@@ -28,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         Movement();
         Jump();
         Crouch();
-        velocity.y += gravity *Time.deltaTime;
+        velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
 
@@ -41,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Movement()
     {
-
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayerMask);
         if (isGrounded && velocity.y < 0)
             velocity.y = -1f;
