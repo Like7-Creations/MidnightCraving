@@ -8,8 +8,10 @@ public class MouseMovement : MonoBehaviour
     public float mouseSensitivity;
     float xRotation;
     float mouseX;
-    [SerializeField] float minXRotation;
-    [SerializeField] float maxXRotation;
+    [SerializeField] float hidingMaxRotation;
+    [SerializeField] float hidingMinRotation;
+    float minXRotation;
+    float maxXRotation;
     [HideInInspector] public bool isHiding;
     void Start()
     {
@@ -23,7 +25,6 @@ public class MouseMovement : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
         xRotation -= mouseY;
         Hide(isHiding);
-        //player.Rotate(Vector3.up * mouseX);
         xRotation = Mathf.Clamp(xRotation, minXRotation, maxXRotation);
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
@@ -32,8 +33,8 @@ public class MouseMovement : MonoBehaviour
     {
         if (startHiding)
         {
-            minXRotation = -20f;
-            maxXRotation = 20f;
+            minXRotation = hidingMinRotation;
+            maxXRotation = hidingMaxRotation;
             player.Rotate(Vector3.zero);
         }
         else if (!startHiding)

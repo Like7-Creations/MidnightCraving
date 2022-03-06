@@ -223,8 +223,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 620144902}
   mouseSensitivity: 800
-  minXRotation: -90
-  maxXRotation: 90
+  hidingMaxRotation: 20
+  hidingMinRotation: -20
   isHiding: 0
 --- !u!114 &11049977
 MonoBehaviour:

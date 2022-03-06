@@ -11,7 +11,6 @@ public class RaycastController : MonoBehaviour
     [SerializeField] Transform slot;
     [SerializeField] Image inventorySlot;
     Ray ray;
-    //[SerializeField] float minDoorDistance;
 
     private void Start()
     {

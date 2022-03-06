@@ -16,14 +16,12 @@ public class HidingSpot : MonoBehaviour
                     other.GetComponent<PlayerMovement>().enabled = false;
                     other.GetComponentInChildren<MouseMovement>().isHiding = true;
                     hidingState = true;
-                    Debug.Log("Start hiding");
                     //play animation/ add shader
                 }
                 else if (hidingState)
                 {
                     other.GetComponent<PlayerMovement>().enabled = true;
                     other.GetComponentInChildren<MouseMovement>().isHiding = false;
-                    Debug.Log("Stop hiding");
                     hidingState = false;
                     //play animation/ add shader
                 }
