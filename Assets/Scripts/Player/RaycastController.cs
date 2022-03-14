@@ -8,21 +8,21 @@ public class RaycastController : MonoBehaviour
     RaycastHit hit;
     Camera cam;
     Item item;
-    [SerializeField] Transform slot;
-    [SerializeField] Image inventorySlot;
+    InventoryManager inventory;
     Ray ray;
 
     private void Start()
     {
         cam = Camera.main;
         item = null;
-        inventorySlot.enabled = false;
+        inventory = FindObjectOfType<InventoryManager>();
     }
     private void Update()
     {
         ray = new Ray(cam.transform.position, cam.transform.forward);
+        inventory.SelectSlot();
         ItemController();
-        if (Physics.Raycast(ray,out hit))
+        if (Physics.Raycast(ray, out hit))
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -38,39 +38,24 @@ public class RaycastController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (item != null)
+            if (inventory.currentSlot.isFilled == true)
             {
-                Drop(item);
+                inventory.EmptySlot();
+
             }
             else
             {
                 if (Physics.Raycast(ray, out hit, 2f))
+                //if (Physics.SphereCast(ray, 2f, out hit))
                 {
                     item = hit.transform.GetComponent<Item>();
                     if (item != null)
-                        PickUp(item);
+                    {
+                        Debug.Log("Item detected");
+                        inventory.SlotManager(item);
+                    }
                 }
             }
         }
-    }
-
-    void Drop(Item pickedItem)
-    {
-        pickedItem = item;
-        inventorySlot.enabled = false;
-        pickedItem.transform.SetParent(null);
-        pickedItem.gameObject.SetActive(true);
-        pickedItem.rbd.AddForce(pickedItem.transform.forward *2, ForceMode.VelocityChange);
-        item = null;
-        inventorySlot.sprite = null;
-    }
-
-    void PickUp(Item pickedItem)
-    {
-        inventorySlot.enabled = true;
-        pickedItem = item;
-        pickedItem.transform.SetParent(slot);
-        inventorySlot.sprite = pickedItem.inventoryImage;
-        pickedItem.gameObject.SetActive(false);
     }
 }
